@@ -1,7 +1,9 @@
 package br.com.alura.escola.aplicacao.aluno.matricular;
 
+import br.com.alura.escola.domain.PublicadorDeEventos;
 import br.com.alura.escola.domain.aluno.Aluno;
 import br.com.alura.escola.domain.aluno.CPF;
+import br.com.alura.escola.domain.aluno.LogDeAlunoMatriculado;
 import br.com.alura.escola.integration.aluno.AlunosRepositoryEmMemoria;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +14,9 @@ public class MatricularAlunoTest {
     @Test
     void alunoDeveriaSerPersistido() {
         AlunosRepositoryEmMemoria repositorio = new AlunosRepositoryEmMemoria();
-        MatricularAluno useCase = new MatricularAluno(repositorio);
+        PublicadorDeEventos publicadorDeEventos = new PublicadorDeEventos();
+        publicadorDeEventos.adicionar(new LogDeAlunoMatriculado());
+        MatricularAluno useCase = new MatricularAluno(repositorio, publicadorDeEventos);
 
         MatriculaAlunoDTO dados = new MatriculaAlunoDTO("nome", "176.599.950-22",
                 "nome@email.com");
