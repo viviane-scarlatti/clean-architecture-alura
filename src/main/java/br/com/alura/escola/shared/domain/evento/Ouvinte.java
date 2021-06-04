@@ -1,4 +1,4 @@
-package br.com.alura.escola.academico.domain;
+package br.com.alura.escola.shared.domain.evento;
 
 public abstract class Ouvinte {
 

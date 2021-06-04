@@ -1,7 +1,9 @@
-package br.com.alura.escola.academico;
+package br.com.alura.escola;
 
 import br.com.alura.escola.academico.aplicacao.aluno.matricular.MatriculaAlunoDTO;
-import br.com.alura.escola.academico.domain.PublicadorDeEventos;
+import br.com.alura.escola.gamificacao.aplicacao.GeraSeloAlunoNovato;
+import br.com.alura.escola.gamificacao.integration.selo.RepositorioDeSelosEmMemoria;
+import br.com.alura.escola.shared.domain.evento.PublicadorDeEventos;
 import br.com.alura.escola.academico.domain.aluno.LogDeAlunoMatriculado;
 import br.com.alura.escola.academico.aplicacao.aluno.matricular.MatricularAluno;
 import br.com.alura.escola.academico.integration.aluno.AlunosRepositoryEmMemoria;
@@ -15,6 +17,7 @@ public class MatricularAlunoViaLinhaDeComando {
 
         PublicadorDeEventos publicadorDeEventos = new PublicadorDeEventos();
         publicadorDeEventos.adicionar(new LogDeAlunoMatriculado());
+        publicadorDeEventos.adicionar(new GeraSeloAlunoNovato(new RepositorioDeSelosEmMemoria()));
 
         MatricularAluno matricularAluno = new MatricularAluno(new AlunosRepositoryEmMemoria(),
                 publicadorDeEventos);

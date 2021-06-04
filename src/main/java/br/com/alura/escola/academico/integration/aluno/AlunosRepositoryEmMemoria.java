@@ -1,6 +1,6 @@
 package br.com.alura.escola.academico.integration.aluno;
 
-import br.com.alura.escola.academico.domain.aluno.CPF;
+import br.com.alura.escola.shared.domain.CPF;
 import br.com.alura.escola.academico.domain.aluno.Aluno;
 import br.com.alura.escola.academico.domain.aluno.AlunoNaoEncontrado;
 import br.com.alura.escola.academico.domain.aluno.RepositorioDeAlunos;

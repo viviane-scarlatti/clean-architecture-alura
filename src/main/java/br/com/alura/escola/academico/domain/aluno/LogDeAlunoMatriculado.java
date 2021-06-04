@@ -1,7 +1,7 @@
 package br.com.alura.escola.academico.domain.aluno;
 
-import br.com.alura.escola.academico.domain.Ouvinte;
-import br.com.alura.escola.academico.domain.Evento;
+import br.com.alura.escola.shared.domain.evento.Ouvinte;
+import br.com.alura.escola.shared.domain.evento.Evento;
 
 import java.time.format.DateTimeFormatter;
 

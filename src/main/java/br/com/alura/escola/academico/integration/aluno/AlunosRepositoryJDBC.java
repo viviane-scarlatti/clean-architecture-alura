@@ -1,6 +1,7 @@
 package br.com.alura.escola.academico.integration.aluno;
 
 import br.com.alura.escola.academico.domain.aluno.*;
+import br.com.alura.escola.shared.domain.CPF;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

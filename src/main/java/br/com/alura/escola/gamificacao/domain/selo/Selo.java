@@ -1,6 +1,6 @@
 package br.com.alura.escola.gamificacao.domain.selo;
 
-import br.com.alura.escola.academico.domain.aluno.CPF;
+import br.com.alura.escola.shared.domain.CPF;
 
 public class Selo {
 
